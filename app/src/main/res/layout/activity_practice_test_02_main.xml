@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/client_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Client"
+            android:textSize="24sp"
+            android:layout_margin="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <EditText
+            android:id="@+id/client_addr_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Server address"
+            app:layout_constraintTop_toBottomOf="@id/client_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/client_port_edit_text"
+            android:layout_margin="24dp"
+            />
+        <EditText
+            android:id="@+id/client_port_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="port"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@id/client_text_view"
+            app:layout_constraintStart_toStartOf="@id/client_addr_edit_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="24dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/client_addr_edit_text">
+
+            <EditText
+                android:id="@+id/city_edit_text"
+                android:layout_width="196dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="Oras"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent">
+            </Spinner>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/submit_port_button"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/linear"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="24dp"
+            android:textSize="16sp"
+            android:text="SUBMIT"
+            />
+
+        <TextView
+            android:id="@+id/server_response_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/submit_port_button"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="24dp"
+            android:textSize="24sp"
+            android:maxLines="10"
+            />
+
+        <EditText
+            android:id="@+id/server_port_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/server_button"
+            android:hint="server port"
+            android:inputType="number"
+            />
+
+        <Button
+            android:id="@+id/server_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="32dp"
+            android:textSize="16sp"
+            android:text="Start server"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
